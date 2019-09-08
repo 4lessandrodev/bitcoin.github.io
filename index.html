@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+
+
+  </head>
+
+  <body>
+
+    <header>
+      <nav aria-label="breadcrumb">
+        <div class="breadcrumb">
+          <h2 style="margin-left: 10%">Arbitragem Bitcoin</h2>
+        </div>
+      </nav>
+    </header>
+
+
+
+    <div class="container">
+      <div>
+        <div class="list-group list-group-horizontal">
+          <!-- <div class="list-group-item">
+              <label for="dolar">Cotação do dólar</label>
+              <input type="text" name="dolar" id="input-dolar">
+            </div>
+ -->
+
+          <div class="list-group-item">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Capital R$</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Montante em Reais">
+              <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="list-group-item">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Cotação do Dólar R$</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Cotação do Dólar" name="dolar" id="input-dolar">
+              <div class="input-group-append">
+                <span class="input-group-text">Reais</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="list-group-item" style="width: 30%; padding-top: 2%">
+            <div class="input-group mb-3" style="width: 100%">
+
+              <div class="progress" style="width: 100%" id="progress">
+                <div id="barra">
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div id="msg1"></div>
+        <div id="msg2"></div>
+        <div id="msg3"></div>
+
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Corretora</th>
+            <th>Compra BTC</th>
+            <th>Venda BTC</th>
+            <th>Compra ETH</th>
+            <th>Venda ETH</th>
+            <th>Compra LTC</th>
+            <th>Venda LTC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mercado Bitcoin</td>
+            <td id="preco-btc-compra-mercado-bitcoin" class="btc-compra"></td>
+            <td id="preco-btc-venda-mercado-bitcoin" class="btc-venda"></td>
+            <td id="preco-eth-compra-mercado-bitcoin" class="eth-compra"></td>
+            <td id="preco-eth-venda-mercado-bitcoin" class="eth-venda"></td>
+            <td id="preco-ltc-compra-mercado-bitcoin" class="ltc-compra"></td>
+            <td id="preco-ltc-venda-mercado-bitcoin" class="ltc-venda"></td>
+          </tr>
+          <tr>
+            <td>3xBit</td>
+            <td id="preco-btc-compra-3xbit" class="btc-compra"></td>
+            <td id="preco-btc-venda-3xbit" class="btc-venda"></td>
+            <td id="preco-eth-compra-3xbit" class="eth-compra"></td>
+            <td id="preco-eth-venda-3xbit" class="eth-venda"></td>
+            <td id="preco-ltc-compra-3xbit" class="ltc-compra"></td>
+            <td id="preco-ltc-venda-3xbit" class="ltc-venda"></td>
+          </tr>
+          <tr>
+            <td>BitBlue</td>
+            <td id="preco-btc-compra-bitBlue" class="btc-compra"></td>
+            <td id="preco-btc-venda-bitBlue" class="btc-venda"></td>
+            <td id="preco-eth-compra-bitBlue" class="eth-compra"></td>
+            <td id="preco-eth-venda-bitBlue" class="eth-venda"></td>
+            <td id="preco-ltc-compra-bitBlue" class="ltc-compra"></td>
+            <td id="preco-ltc-venda-bitBlue" class="ltc-venda"></td>
+          </tr>
+          <tr>
+            <td>BitcoinTrader</td>
+            <td id="preco-btc-compra-bicoinTrader" class="btc-compra"></td>
+            <td id="preco-btc-venda-bicoinTrader" class="btc-venda"></td>
+            <td id="preco-eth-compra-bicoinTrader" class="eth-compra"></td>
+            <td id="preco-eth-venda-bicoinTrader" class="eth-venda"></td>
+            <td id="preco-ltc-compra-bicoinTrader" class="ltc-compra"></td>
+            <td id="preco-ltc-venda-bicoinTrader" class="ltc-venda"></td>
+          </tr>
+          <tr>
+            <td>Binance</td>
+            <td id="preco-btc-compra-binance" class="btc-compra"></td>
+            <td id="preco-btc-venda-binance" class="btc-venda"></td>
+            <td id="preco-eth-compra-binance" class="eth-compra"></td>
+            <td id="preco-eth-venda-binance" class="eth-venda"></td>
+            <td id="preco-ltc-compra-binance" class="ltc-compra"></td>
+            <td id="preco-ltc-venda-binance" class="ltc-venda"></td>
+          </tr>
+          <tr>
+            <td>BitPreço</td>
+            <td id="preco-btc-compra-bitpreco" class="btc-compra"></td>
+            <td id="preco-btc-venda-bitpreco" class="btc-venda"></td>
+            <td id="preco-eth-compra-bitpreco" class="eth-compra"></td>
+            <td id="preco-eth-venda-bitpreco" class="eth-venda"></td>
+            <td id="preco-ltc-compra-bitpreco" class="ltc-compra"></td>
+            <td id="preco-ltc-venda-bitpreco" class="ltc-venda"></td>
+          </tr>
+          <tr>
+            <td>BitCambio</td>
+            <td id="preco-btc-compra-bitcambio" class="btc-compra"></td>
+            <td id="preco-btc-venda-bitcambio" class="btc-venda"></td>
+            <td id="preco-eth-compra-bitcambio" class="eth-compra"></td>
+            <td id="preco-eth-venda-bitcambio" class="eth-venda"></td>
+            <td id="preco-ltc-compra-bitcambio" class="ltc-compra"></td>
+            <td id="preco-ltc-venda-bitcambio" class="ltc-venda"></td>
+          </tr>
+
+
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-success" name="calcular" id="btncalcular">Calcular melhor
+        operação</button>
+    </div>
+
+
+
+
+
+    <script src="app.js"></script>
+  </body>
+
+</html>

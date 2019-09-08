@@ -1,0 +1,9 @@
+.ocultar {
+  display: none;
+}
+
+.destacado {
+  font-weight: bold;
+  color: rgb(7, 59, 7);
+  background-color: rgb(154, 236, 188);
+}
